@@ -6,6 +6,7 @@ import com.github.halab4dev.exception.ResourceNotFoundException;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,9 +18,10 @@ import java.util.Optional;
 public class UserRepositoryImpl implements UserRepository {
 
     private static final List<User> USERS = Arrays.asList(
-            new User(0, Role.ADMIN, "halab", "123abc", 5),
-            new User(1, Role.USER, "tom", "123", 3),
-            new User(2, Role.USER, "jerry", "abc", 2)
+            new User(0, Arrays.asList("SUPER_ADMIN" ,"ADMIN"), "halab", "123abc", 5),
+            new User(0, Collections.singletonList("ADMIN"), "superman", "123abc", 5),
+            new User(1, Collections.singletonList("USER"), "tom", "123", 3),
+            new User(2, Collections.singletonList("USER"), "jerry", "abc", 2)
     );
 
 

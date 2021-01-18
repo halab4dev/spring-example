@@ -1,11 +1,18 @@
 package com.github.halab4dev.constant;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+import java.util.List;
+
 /*
  *
  * @author halab
  */
-public enum Role {
+@Data
+@AllArgsConstructor
+public class Role {
 
-    USER,
-    ADMIN
+    private String name;
+    private List<Privilege> privileges;
 }

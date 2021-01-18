@@ -5,6 +5,8 @@ import com.github.halab4dev.constant.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.util.List;
+
 /*
  *
  * @author halab
@@ -15,7 +17,7 @@ public class User {
 
     private int id;
     @JsonIgnore
-    private Role role;
+    private List<String> roles;
     private String username;
     @JsonIgnore
     private String password;

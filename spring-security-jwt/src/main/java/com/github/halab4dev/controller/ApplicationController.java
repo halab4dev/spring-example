@@ -38,15 +38,21 @@ public class ApplicationController {
         return jwtService.generateJWT(user.get());
     }
 
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
-    @GetMapping("admin")
-    public String getAll() {
-        return "Hello, admin";
+    @PreAuthorize("hasAnyAuthority('DELETE_USERS')")
+    @GetMapping("super-admin")
+    public String deleteUser() {
+        return "Hello, super admin";
     }
 
-    @PreAuthorize("hasAnyAuthority('USER', 'ADMIN')")
+    @PreAuthorize("hasAnyAuthority('SEARCH_USERS')")
+    @GetMapping("admin")
+    public String getAll() {
+        return "Hello, all admin";
+    }
+
+    @PreAuthorize("hasAnyAuthority('GET_USER_DETAIL')")
     @GetMapping("user")
     public String getUserDetail() {
-        return "Hello, admin and user";
+        return "Hello, all admin and user";
     }
 }
