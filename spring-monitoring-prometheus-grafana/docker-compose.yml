@@ -1,0 +1,37 @@
+# Version of docker compose. See https://docs.docker.com/compose/compose-file/compose-versioning/#versioning
+version: "3"
+
+# Services
+services:
+
+  application:
+    image: spring-application
+    container_name: spring-application
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - monitoring-network
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+        - "9090:9090"
+    networks:
+      - monitoring-network
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    networks:
+      - monitoring-network
+
+networks:
+  monitoring-network:
