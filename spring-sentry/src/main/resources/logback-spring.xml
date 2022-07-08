@@ -1,0 +1,17 @@
+<configuration>
+    <!--    Include spring boot default config-->
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <!--    Configure the Sentry appender, overriding the logging threshold to the WARN level -->
+    <appender name="Sentry" class="io.sentry.logback.SentryAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+    </appender>
+
+    <!--    Enable the Console and Sentry appenders, Console is provided as an example
+        of a non-Sentry logger that is set to a different logging threshold -->
+    <root level="INFO">
+        <appender-ref ref="Sentry" />
+    </root>
+</configuration>
