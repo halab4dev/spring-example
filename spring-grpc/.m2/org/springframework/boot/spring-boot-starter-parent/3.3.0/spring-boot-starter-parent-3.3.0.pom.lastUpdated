@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Mar 14 16:20:23 ICT 2026
+@default-central-https\://repo1.maven.org/maven2/.lastUpdated=1773480023693
+b5cf8ea61e40057be5eadb6bb8e109212c9f9b1a@default-github-https\://maven.pkg.github.com/halab4dev/mongo2j/.lastUpdated=1773480023717
+https\://maven.pkg.github.com/halab4dev/mongo2j/.error=Could not transfer artifact org.springframework.boot\:spring-boot-starter-parent\:pom\:3.3.0 from/to github (https\://maven.pkg.github.com/halab4dev/mongo2j)\: maven.pkg.github.com\: nodename nor servname provided, or not known
+https\://repo1.maven.org/maven2/.error=Could not transfer artifact org.springframework.boot\:spring-boot-starter-parent\:pom\:3.3.0 from/to central (https\://repo1.maven.org/maven2)\: repo1.maven.org\: nodename nor servname provided, or not known

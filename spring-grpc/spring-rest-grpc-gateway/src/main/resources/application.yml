@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+logging:
+  file:
+    name: ./log/grpc.log
+
+domain-service:
+  rest-base-url: http://localhost:8082
+
+grpc:
+  client:
+    domain-service:
+      address: static://localhost:9092
+      negotiationType: plaintext

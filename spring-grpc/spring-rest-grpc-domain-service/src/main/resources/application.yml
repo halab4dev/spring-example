@@ -1,0 +1,11 @@
+server:
+  port: 8082
+
+logging:
+  file:
+    name: ./log/grpc.log
+
+grpc:
+  server:
+    port: 9092
+
